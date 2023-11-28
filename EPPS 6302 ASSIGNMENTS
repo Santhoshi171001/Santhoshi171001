@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R Code on Website</title>
+    <style>
+        /* Optional: Add some styling for better code readability */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Using R Code in an HTML Website</h1>
+
+<h2>Load Data and Calculate Search Volume Difference</h2>
+<pre>
+# Assuming your data frame is named 'df'
+
+# Convert 'trump' and 'biden' columns to numeric
+df$trump &lt;- as.numeric(df$trump)
+df$biden &lt;- as.numeric(df$biden)
+
+# Calculate the difference between Trump and Biden search volumes
+search_diff &lt;- diff(df$trump - df$biden)
+</pre>
+
+<h2>Plot the Difference Vector</h2>
+<pre>
+# Plotting the difference vector
+plot(df$Week[-1], search_diff, type = "l", col = "purple", xlab = "Week", ylab = "Search Volume Difference", main = "Search Volume Difference (Trump - Biden)")
+</pre>
+
+</body>
+</html>
